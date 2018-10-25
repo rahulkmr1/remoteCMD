@@ -9,7 +9,7 @@ def runProcess(chat_id,gotmsg):
             body="You can't use reboot, use 'shutdown -r hh:mm &' instead"
             return
         #df=subprocess.Popen(str,stdout=PIPE)
-        #output,err=df.communicate()
+        ##output,err=df.communicate()
         #print type(output),output
         elif str[0].lower() =="download":
             str=("aria2c -x 16 -s 16 "+str[1]).split()
@@ -34,12 +34,12 @@ def handle(msg):
     if content_type == 'text':
         runProcess(chat_id,msg['text'])
 #TOKEN = sys.argv[1]  # get token from command-line
-#########################################################################################
+###########################################################################################
 TOKEN="PUT_YOUR_TOKEN_HERE"
-#########################################################################################
+###########################################################################################
 bot = telepot.Bot(TOKEN)
 bot.message_loop(handle)
-#print ('Listening ...')
+print ('Listening ...')
 
 # Keep the program running.
 while 1:
